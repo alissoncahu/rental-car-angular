@@ -1,0 +1,24 @@
+<h2 *ngIf="isChange" mat-dialog-title>Atualizar Carro</h2>
+<h2 *ngIf="!isChange" mat-dialog-title>Cadastrar Carro</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Marca</mat-label>
+    <input matInput [(ngModel)]="data.brandCar"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Modelo</mat-label>
+    <input matInput [(ngModel)]="data.modelCar"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Cor</mat-label>
+    <input matInput [(ngModel)]="data.colorCar"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Placa</mat-label>
+    <input matInput [(ngModel)]="data.licensePlateCar"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>

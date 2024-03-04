@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+  <span>Rental Car - Carros</span>
+</mat-toolbar>
+
+<div class="header">
+  <h1>Carros</h1>
+  <button mat-fab (click)="openDialog(null)" aria-label="Adicionar Carro" color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="table">
+  <table mat-table #table [dataSource]="cars" class="mat-elevation-z8">
+    <ng-container matColumnDef="brandCar">
+      <th mat-header-cell *matHeaderCellDef> Marca </th>
+      <td mat-cell *matCellDef="let car"> {{car.brandCar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelCar">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let car"> {{car.modelCar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="colorCar">
+      <th mat-header-cell *matHeaderCellDef> Cor </th>
+      <td mat-cell *matCellDef="let car"> {{car.colorCar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="licensePlateCar">
+      <th mat-header-cell *matHeaderCellDef> Placa </th>
+      <td mat-cell *matCellDef="let car"> {{car.licensePlateCar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Opções </th>
+      <td mat-cell *matCellDef="let car">
+        <button mat-icon-button (click)="updateCar(car)" color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteCar(car.id)" color="primary">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
