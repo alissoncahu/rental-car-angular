@@ -1,0 +1,24 @@
+<h2 *ngIf="isChange" mat-dialog-title>Atualizar Usuário</h2>
+<h2 *ngIf="!isChange" mat-dialog-title>Cadastrar Usuário</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Primeiro Nome</mat-label>
+    <input matInput [(ngModel)]="data.firstName"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Ultimo Nome</mat-label>
+    <input matInput [(ngModel)]="data.lastName"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="data.email"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>CPF</mat-label>
+    <input matInput [(ngModel)]="data.cpf"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>

@@ -45,7 +45,6 @@ export class CarsComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
       if (result !== undefined){
         if (this.cars.map(p => p.id).includes(result.id)){
           this.carService.updateCars(result)
