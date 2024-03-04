@@ -1,0 +1,24 @@
+<h2 *ngIf="isChange" mat-dialog-title>Atualizar Locação</h2>
+<h2 *ngIf="!isChange" mat-dialog-title>Cadastrar Locação</h2>
+<mat-dialog-content>
+  <mat-form-field>
+    <mat-label>Data de início</mat-label>
+    <input matInput [(ngModel)]="data.locationStart"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Data de fim</mat-label>
+    <input matInput [(ngModel)]="data.locationEnd"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Placa do carro</mat-label>
+    <input matInput [(ngModel)]="data.licensePlateCar"/>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>CPF do locador</mat-label>
+    <input matInput [(ngModel)]="data.cpfLocator"/>
+  </mat-form-field>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Salvar</button>
+</mat-dialog-actions>

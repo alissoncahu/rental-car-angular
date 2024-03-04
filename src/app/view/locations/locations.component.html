@@ -1,1 +1,49 @@
-<p>locations works!</p>
+<mat-toolbar color="primary">
+  <span>Locações</span>
+</mat-toolbar>
+
+<div class="header">
+  <h1></h1>
+  <button mat-fab (click)="openDialog(null)" aria-label="Criar Locação" color="primary">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
+
+<div class="table">
+  <table mat-table #table [dataSource]="locations" class="mat-elevation-z8">
+    <ng-container matColumnDef="locationStart">
+      <th mat-header-cell *matHeaderCellDef> Data inicial </th>
+      <td mat-cell *matCellDef="let location"> {{location.locationStart}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="locationEnd">
+      <th mat-header-cell *matHeaderCellDef> Data final </th>
+      <td mat-cell *matCellDef="let location"> {{location.locationEnd}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="licensePlateCar">
+      <th mat-header-cell *matHeaderCellDef> Placa </th>
+      <td mat-cell *matCellDef="let location"> {{location.licensePlateCar}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cpfLocator">
+      <th mat-header-cell *matHeaderCellDef> CPF </th>
+      <td mat-cell *matCellDef="let location"> {{location.cpfLocator}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Opções </th>
+      <td mat-cell *matCellDef="let location">
+        <button mat-icon-button (click)="updateLocation(location)" color="primary">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button (click)="deleteLocation(location.id)" color="primary">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
