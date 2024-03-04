@@ -18,6 +18,7 @@ import { LocationsComponent } from './view/locations/locations.component';
 import { CarDialogComponent } from './shared/car-dialog/car-dialog.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserDialogComponent } from './shared/user-dialog/user-dialog.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { UserDialogComponent } from './shared/user-dialog/user-dialog.component'
     CarsComponent,
     LocationsComponent,
     CarDialogComponent,
-    UserDialogComponent
+    UserDialogComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

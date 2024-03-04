@@ -18,9 +18,9 @@ export class UserDialogComponent implements OnInit {
 
   ngOnInit(): void{
     if(this.data.id != null){
-      this.isChange = true;
-    }else{
       this.isChange = false;
+    }else{
+      this.isChange = true;
     }
   }
 
